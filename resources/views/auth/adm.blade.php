@@ -50,9 +50,13 @@
                         <td>{{$dis->name}}</td>
                         <td>{{$dis->email}}</td>
                         <td>
+<<<<<<< HEAD
                            
 
                         <a href="{{url('editarUsuario',$dis->id)}}" class="btn btn-success">Editar</a>
+=======
+                        <a href="{{url('editar',$dis->id)}}" class="btn btn-success">Editar</a>
+>>>>>>> 03e71d7 (creando atributo bandera a usuario)
                         
                         
                             <form action="{{url('adm/eliminar/'.$dis->id)}}" method="post" class="d-inline">

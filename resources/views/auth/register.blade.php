@@ -53,23 +53,38 @@
                                     class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                     name="password" required>
 
-                             
+                                <div class="mt-2">
+                                    <div class="form-group row">
+                                        <label for="bandera"
+                                            class="col-md-4 col-form-label text-md-right">{{ __('bandera') }}</label>
+                                        <div class="col-md-6">
+                                            <input id="bandera" type="text"
+                                                class="form-control{{ $errors->has('badnera')}}"
+                                                name="bandera" value="{{ old('bandera') }}">
+                                        </div>
+                                    </div>
+
+                                     <!--<div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="1" id="bandera" checked>
+                                        <label class="form-check-label" value="1" for="flexCheckDefault">
+                                            {{ __('Usuario R/W') }}
+                                        </label>
+                                    </div>-->
+                                </div>
+
                             </div>
                         </div>
 
-                        
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Registrar') }}
                                 </button>
                                 <a href="{{ url('/') }}" class="btn btn-primary">Volver</a>
                             </div>
                         </div>
-
-
-
                     </form>
                 </div>
             </div>

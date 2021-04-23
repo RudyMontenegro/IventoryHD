@@ -31,7 +31,15 @@ public function regUs(Request $request){
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
-        $user->save();
+        $user->bandera = $request->bandera;
+
+//dd($user);
+     /*   if ($request ->get('bandera')) {
+            $user->bandera = 1;
+        }else {
+            $user->bandera = 0;
+        }*/
+       $user->save();
 
         return redirect('home');
     }
