@@ -147,6 +147,7 @@ public function regUs(Request $request){
             $UsuarioUpdate = App\User::findOrFail($id);
             $UsuarioUpdate->name = $request->name;
             $UsuarioUpdate->email = $request->email;
+            $UsuarioUpdate->password =bcrypt($request->password);
             
             $UsuarioUpdate->save();
             return redirect('usuarios');
