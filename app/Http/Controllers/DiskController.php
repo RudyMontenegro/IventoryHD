@@ -30,7 +30,7 @@ public function regUs(Request $request){
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = bcryt($request->password);
         $user->bandera = $request->bandera;
 
 //dd($user);
@@ -141,6 +141,7 @@ public function regUs(Request $request){
             $UsuarioUpdate = App\User::findOrFail($id);
             $UsuarioUpdate->name = $request->name;
             $UsuarioUpdate->email = $request->email;
+            $UsuarioUpdate->password =bcrypt($request->password);
             
             $UsuarioUpdate->save();
             return redirect('usuarios');
