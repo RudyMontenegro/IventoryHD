@@ -117,6 +117,26 @@ public function regUs(Request $request){
 
         return back();  
         }
+
+        public function eliminarUsuario(Request $request, $id){
+            $usuario = DB::table('users')->where('id','=',$id)->delete();
+            return back(); 
+        }
+
+        public function editarUsuario($id){
+            $usuarioD = App\User::findOrFail($id);
+            return view('editarUsuario',compact('usuarioD'));
+        }
+
+        public function updateU(Request $request,$id){
+
+            $UsuarioUpdate = App\User::findOrFail($id);
+            $UsuarioUpdate->name = $request->name;
+            $UsuarioUpdate->email = $request->email;
+            
+            $UsuarioUpdate->save();
+            return redirect('usuarios');
+        }
         
         public function eliminarCompatible(Request $request, $id){
             

@@ -50,5 +50,8 @@ Route::delete('eliminarCompatible/{id}', 'DiskController@eliminarCompatible')->m
 Route::get('showDisk/print', 'DiskController@imprimir')->middleware('auth');
 
 Route::get('usuarios', 'DiskController@usuarios')->name('usuarios')->middleware('auth');
+Route::delete('adm/eliminar/{id}','DiskController@eliminarUsuario')->middleware('auth');
+Route::get('editarUsuario/{id}','DiskController@editarUsuario')->name('editarUsuario')->middleware('auth');
+Route::put('/editarUsuario/{id}','DiskController@updateU')->name('updateU')->middleware('auth');
 
 Route::post('registrarUsuario','DiskController@regUs')->name('registrarUsuario')->middleware('auth');

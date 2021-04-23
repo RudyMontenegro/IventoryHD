@@ -52,10 +52,10 @@
                         <td>
                            
 
-                        <a href="{{url('editar',$dis->id)}}" class="btn btn-success">Editar</a>
+                        <a href="{{url('editarUsuario',$dis->id)}}" class="btn btn-success">Editar</a>
                         
                         
-                            <form action="{{url('showDisk/eliminar/'.$dis->id)}}" method="post" class="d-inline">
+                            <form action="{{url('adm/eliminar/'.$dis->id)}}" method="post" class="d-inline">
                                 {{csrf_field()}}
                                 {{ method_field('DELETE') }}
                                 <button class="btn btn-danger"
