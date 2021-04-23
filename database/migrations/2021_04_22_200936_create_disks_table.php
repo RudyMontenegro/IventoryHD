@@ -22,7 +22,7 @@ class CreateDisksTable extends Migration
             $table->string('capacidad');
             $table->string('tipoEntrada');
             $table->text('observaciones')->nullable();
-            $table->string('bandera')->default(0);
+            $table->string('bandera');
             $table->timestamps();
         });
     }

@@ -26,20 +26,26 @@ class DiskController extends Controller
 
 public function regUs(Request $request){
         
-  
+        
+    $campos=[
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+        'bandera' => 'required',
+        
+    ];
+    $mensaje=[
+        "required"=>'Campo requerido',
+    ];
+    $this->validate($request,$campos,$mensaje);
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
-        $user->bandera = $request->bandera;
+        $user->password = bcrypt($request->password);
+        $user->bandera = $request->get('bandera');
 
-//dd($user);
-     /*   if ($request ->get('bandera')) {
-            $user->bandera = 1;
-        }else {
-            $user->bandera = 0;
-        }*/
-       $user->save();
+        $user->save();
 
         return redirect('home');
     }
