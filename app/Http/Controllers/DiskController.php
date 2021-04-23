@@ -23,6 +23,11 @@ class DiskController extends Controller
         ->get();
         return view('auth.adm', compact('dis'));
     }
+    public function buscar($id){
+
+        return redirect('https://www.google.com/search?q='.$id.'+to+sata');
+    }
+
 
 public function regUs(Request $request){
         

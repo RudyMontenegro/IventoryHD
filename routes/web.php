@@ -55,3 +55,4 @@ Route::get('editarUsuario/{id}','DiskController@editarUsuario')->name('editarUsu
 Route::put('/editarUsuario/{id}','DiskController@updateU')->name('updateU')->middleware('auth');
 
 Route::post('registrarUsuario','DiskController@regUs')->name('registrarUsuario')->middleware('auth');
+Route::get('buscar/{id}','DiskController@buscar')->name('buscar')->middleware('auth');

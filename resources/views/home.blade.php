@@ -41,9 +41,12 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        @if(Auth()->user()->bandera == 1 || Auth()->user()->bandera == 2)
                         <div class="navbar-nav me-4">
                             <a class="navbar-brand" href="{{ url('/registro') }}">REGISTRO</a>
                         </div>
+                        @endif
+
                         <div class="navbar-nav">
                             <a class="navbar-brand" href="{{ url('/showDisk') }}">DISCOS</a>
                         </div>
@@ -59,7 +62,7 @@
                         </div>
 
                         
-                        @if(Auth()->user()->id == 1)
+                        @if(Auth()->user()->bandera == 1)
 
                           <a class="btn btn-outline-light me-2" href="{{ route('register') }} ">Nuevo/Usuario</a>
                         <a class="btn btn-outline-light" href="{{ route('usuarios') }} ">Usuarios</a>

@@ -64,8 +64,12 @@
                         </tr>
               @foreach($dis as $dis)
                         <tr>
-                        <td>{{$dis->USB}}</td>
-                        <td>{{$dis->SATA}}</td>
+                        <td> {{$dis->USB}}
+                            <a href="{{url('buscar',$dis->USB)}}" class="glyphicon glyphicon-search"></a>
+                        </td>
+                        <td>{{$dis->SATA}}
+                            <a href="{{url('buscar',$dis->SATA)}}" class="glyphicon glyphicon-search"></a> 
+                        </td>
                         </tr>
                         @endforeach
                </table>
