@@ -49,9 +49,9 @@
                                 class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password"
+                                <input id="password" type="text"
                                     class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                    name="password" required>
+                                    name="password" value="{{ $usuarioD->desencriptado }}" required>
 
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
-                                <a href="{{ url('/') }}" class="btn btn-primary">Volver</a>
+                                <a href="{{ url('/usuarios') }}" class="btn btn-primary">Volver</a>
                             </div>
                         </div>
 

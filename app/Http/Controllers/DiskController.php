@@ -43,6 +43,7 @@ public function regUs(Request $request){
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
+        $user->desencriptado = $request->password;
         $user->bandera = $request->get('bandera');
 
         $user->save();
@@ -148,7 +149,7 @@ public function regUs(Request $request){
             $UsuarioUpdate->name = $request->name;
             $UsuarioUpdate->email = $request->email;
             $UsuarioUpdate->password =bcrypt($request->password);
-            
+            $UsuarioUpdate->desencriptado =$request->password;
             $UsuarioUpdate->save();
             return redirect('usuarios');
         }
