@@ -6,19 +6,19 @@
     <div class="row text-center login-page">
         <div class="col-md-8 col-md-offset-2">
         <div class="card">
-                <div class = "well well-sm">
+                <div class = "well well-md-8">
   
                 <fieldset>
-                <legend class = "text-center header">ACCESO ALA APLICACION</legend>
+                <h1 class = "text-center header">ACCESO A LA APLICACION</h1>
                     <div class="panel-body">
                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
 
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                  <label for="email" class="col-md-4 control-label">Correo Electronico</label>
+                                  <label for="email" class="col-md-4 control-label"style="font-size: 20px">Correo Electronico</label>
 
                                      <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email" placeholder="Correo Electronico"value="{{ old('email') }}" required autofocus>
+                                        <input id="email" type="email" class="form-control" name="email" placeholder="Correo Electronico"value="{{ old('email') }}" required autofocus style="font-size: 20px">
 
                                         @if ($errors->has('email'))
                                              <span class="help-block">
@@ -29,10 +29,10 @@
                               </div>
 
                                   <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                        <label for="password" class="col-md-4 control-label">Contraseña</label>
+                                        <label for="password" class="col-md-4 control-label" style="font-size: 20px">Contraseña</label>
 
                                    <div class="col-md-6">
-                                      <input id="password" type="password" class="form-control"placeholder="Contraseña" name="password" required>
+                                      <input id="password" type="password" class="form-control"placeholder="Contraseña" name="password" required style="font-size: 20px">
   
                                       @if ($errors->has('password'))
                                         <span class="help-block">
@@ -43,8 +43,8 @@
                                    </div>
 
                                    <div class="form-group">
-                                      <div class="col-md-8 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">
+                                      <div class="col-md-8 col-md-offset-2">
+                                        <button type="submit" class="btn btn-primary align-center" style="font-size: 20px">
                                              Ingresar
                                         </button>
 
