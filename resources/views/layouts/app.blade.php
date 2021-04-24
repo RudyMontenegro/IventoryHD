@@ -20,9 +20,14 @@
             <div class="container">
                 <div class="container-fluid">
                     <h1 style="color:#fff">VIRTUAL TECNO DINAMYC</h1>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav">
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <!-- Authentication Links -->
                             @if (Auth::guest())
