@@ -1,9 +1,8 @@
 <?php
 
-use App\Lista;
 use Illuminate\Database\Seeder;
-
-class listaSeeder extends Seeder
+use App\Lista;
+class ListaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
