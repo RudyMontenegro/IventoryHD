@@ -34,8 +34,8 @@ public function regUs(Request $request){
         
     $campos=[
         'name' => 'required',
-        'email' => 'required',
-        'password' => 'required | unique:users,email',
+        'email' => 'required | unique:users,email',
+        'password' => 'required',
         'bandera' => 'required',
         
     ];
