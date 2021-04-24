@@ -1,12 +1,16 @@
 @extends('layouts.app')
-@extends('plantilla')
+<head>
+     <title>VirtualTecnoDinamyc</title>
+     
+     <link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon" />
+ </head>
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Editar Registro') }}</div>
+            <legend class = "text-center header">EDITAR REGISTRO</legend>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('updateU',$usuarioD->id) }}" aria-label="{{ __('Register') }}">
