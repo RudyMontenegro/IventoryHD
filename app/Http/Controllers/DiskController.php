@@ -34,14 +34,14 @@ public function regUs(Request $request){
         
     $campos=[
         'name' => 'required',
-        'email' => 'required|unique:users,email',
-        'password' => 'required',
+        'email' => 'required',
+        'password' => 'required | unique:users,email',
         'bandera' => 'required',
         
     ];
     $mensaje=[
-        "required"=>'Campo requerido',
-        "email.unique"=>'Correo ya registrado',
+        "required"=>'Campo requerido',  
+        "unique"=>'Correo ya Registrado',
     ];
     $this->validate($request,$campos,$mensaje);
 
