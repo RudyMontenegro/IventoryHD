@@ -66,7 +66,7 @@
 
                           <a class="btn btn-outline-light me-2" href="{{ route('register') }} ">Nuevo/Usuario</a>
                         <a class="btn btn-outline-light" href="{{ route('usuarios') }} ">Usuarios</a>
-                        
+                        <a href="{{url('listaC')}}"class="btn btn-outline-light mx-2">Compatibles</a>
                         @endif
 
                         

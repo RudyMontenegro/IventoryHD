@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use \PDF;
 use App\User;
-
+use App\Lista;
 class DiskController extends Controller
 {
     public function inicio(){
@@ -243,6 +243,31 @@ public function regUs(Request $request){
         $compatible->save();
 
         return redirect('addCompatible')->with('mensaje','Tajeta Logica Compatible Añadida');
+    }
+
+    public function listaC(){
+        $listaCom = DB::table('listas')
+        ->select('*')
+        ->get();
+        return view('listaC', compact('listaCom'));
+    }
+
+    public function eliminarLista(Request $request,$id){
+        $listaE = DB::table('listas')->where('id','=',$id)->delete();
+            return back(); 
+    }
+
+    public function editarLista($id){
+        $listaEd = App\Lista::findOrFail($id);
+        return view('editarLista',compact('listaEd'));
+    }
+
+    public function updateL(Request $request,$id){
+        $ListaU = App\Lista::findOrFail($id);
+            $ListaU->USB = $request->USB;
+            $ListaU->SATA = $request->SATA;
+            $ListaU->save();
+            return redirect('listaC');
     }
 
     public function add2(Request $request){

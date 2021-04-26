@@ -54,5 +54,10 @@ Route::delete('adm/eliminar/{id}','DiskController@eliminarUsuario')->middleware(
 Route::get('editarUsuario/{id}','DiskController@editarUsuario')->name('editarUsuario')->middleware('auth');
 Route::put('/editarUsuario/{id}','DiskController@updateU')->name('updateU')->middleware('auth');
 
+Route::get('listaC','DiskController@listaC')->name('listaC')->middleware('auth');
+Route::delete('listaC/eliminar/{id}','DiskController@eliminarLista')->middleware('auth');
+Route::get('editarLista/{id}','DiskController@editarLista')->name('editarLista')->middleware('auth');
+Route::put('/editarLista/{id}','DiskController@updateL')->name('updateL')->middleware('auth');
+
 Route::post('registrarUsuario','DiskController@regUs')->name('registrarUsuario')->middleware('auth');
 Route::get('buscar/{id}','DiskController@buscar')->name('buscar')->middleware('auth');
