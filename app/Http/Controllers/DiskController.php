@@ -181,11 +181,8 @@ public function regUs(Request $request){
               $dis = DB::table('disks')
               ->select('disks.*')
               ->get();
-              $datos = compact('dis');  
-              $pdf = PDF::loadView('pdf', $datos);
-        
-              return $pdf->download('inventario'.'.pdf'); 
-            
+              $pdf = \PDF::loadView('pdf',compact('dis'))->setOptions(['defaultFont' => 'sans-serif']); 
+              return $pdf->download('inventario.pdf'); 
         } 
 
      public function compatible(Request $request){
