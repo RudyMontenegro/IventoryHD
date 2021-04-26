@@ -18,7 +18,7 @@
                                   <label for="email" class="col-md-4 control-label"style="font-size: 20px">Correo Electronico</label>
 
                                      <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email" placeholder="Correo Electronico"value="{{ old('email') }}" required autofocus style="font-size: 20px">
+                                        <input id="email" type="email" class="form-control" name="email" placeholder="Correo Electronico"value="{{ old('email') }}"  autofocus style="font-size: 20px">
 
                                         @if ($errors->has('email'))
                                              <span class="help-block">
@@ -32,7 +32,7 @@
                                         <label for="password" class="col-md-4 control-label" style="font-size: 20px">Contraseña</label>
 
                                    <div class="col-md-6">
-                                      <input id="password" type="password" class="form-control"placeholder="Contraseña" name="password" required style="font-size: 20px">
+                                      <input id="password" type="password" class="form-control"placeholder="Contraseña" name="password"  style="font-size: 20px">
   
                                       @if ($errors->has('password'))
                                         <span class="help-block">
