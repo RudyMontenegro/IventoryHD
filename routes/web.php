@@ -61,3 +61,5 @@ Route::put('/editarLista/{id}','DiskController@updateL')->name('updateL')->middl
 
 Route::post('registrarUsuario','DiskController@regUs')->name('registrarUsuario')->middleware('auth');
 Route::get('buscar/{id}','DiskController@buscar')->name('buscar')->middleware('auth');
+
+Route::post('addTable','DiskController@addTable')->name('addTable')->middleware('auth');

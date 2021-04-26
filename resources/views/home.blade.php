@@ -50,6 +50,7 @@
                         <div class="navbar-nav me-4">
                             <a class="navbar-brand" href="{{ url('/showDisk') }}">DISCOS</a>
                         </div>
+                        
                         <div class="navbar-nav me-4">
                             <a class="navbar-brand" href="{{url('listaC')}}">TABLA</a>
                         </div>

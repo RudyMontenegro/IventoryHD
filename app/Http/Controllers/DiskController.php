@@ -28,6 +28,28 @@ class DiskController extends Controller
         return redirect('https://www.google.com/search?q='.$id.'+to+sata');
     }
 
+    public function addTable(Request $request){
+
+        $campos=[
+            'usb' => 'required',
+            'sata' => 'required',
+            
+        ];
+        $mensaje=[
+            "required"=>'Campo requerido',  
+        ];
+        $this->validate($request,$campos,$mensaje);
+
+
+        $lista = new Lista();
+        $lista->USB = strtoupper($request->usb);
+        $lista->SATA = strtoupper($request->sata);
+        $lista->save();
+
+        return back();
+    }
+
+
 
 public function regUs(Request $request){
         
@@ -264,8 +286,8 @@ public function regUs(Request $request){
 
     public function updateL(Request $request,$id){
         $ListaU = App\Lista::findOrFail($id);
-            $ListaU->USB = $request->USB;
-            $ListaU->SATA = $request->SATA;
+            $ListaU->USB = strtoupper($request->USB);
+            $ListaU->SATA = strtoupper($request->SATA);
             $ListaU->save();
             return redirect('listaC');
     }

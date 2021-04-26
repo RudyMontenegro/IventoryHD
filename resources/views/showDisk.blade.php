@@ -61,8 +61,10 @@
                         <th scope="col">Capacidad</th>
                         <th scope="col">Tipo de Entrada</th>
                         <th scope="col">Observaciones</th>
+                        @if(Auth()->user()->bandera == 1 || Auth()->user()->bandera == 2)
                         <th scope="col">Acciones</th>        
-                       
+                       @endif
+
                     </tr>
                      @foreach($dis as $dis)
                      <tr>
@@ -73,6 +75,7 @@
                     <td>{{$dis->capacidad}}</td>
                     <td>{{$dis->tipoEntrada}}</td>
                     <td>{{$dis->observaciones}}</td>
+                    @if(Auth()->user()->bandera == 1 || Auth()->user()->bandera == 2)
                     <td>
                         <a href="{{url('editar',$dis->id)}}" class="btn btn-success">Editar</a>
  
@@ -82,6 +85,7 @@
                         <button class="btn btn-danger" onclick = " return confirm ('¿Esta seguro de Eliminar este Usuario?'); " type="submit">Eliminar</button>
                         </form>    
                     </td> 
+                    @endif
                     </tr>
                     @endforeach
             </table>

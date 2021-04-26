@@ -50,18 +50,25 @@
                         <td>{{$dis->name}}</td>
                         <td>{{$dis->email}}</td>
                         <td>
-                           
+                            
+                        @if ($dis->id != 1)
 
                         <a href="{{url('editarUsuario',$dis->id)}}" class="btn btn-success">Editar</a>
-                        
-                        
-                            <form action="{{url('adm/eliminar/'.$dis->id)}}" method="post" class="d-inline">
+
+                             <form action="{{url('adm/eliminar/'.$dis->id)}}" method="post" class="d-inline">
                                 {{csrf_field()}}
                                 {{ method_field('DELETE') }}
                                 <button class="btn btn-danger"
                                     onclick=" return confirm ('¿Esta seguro de Eliminar este Usuario?'); "
                                     type="submit">Eliminar</button>
                             </form>
+                        @else
+                       
+                        <a href="{{url('editarUsuario',$dis->id)}}" class="btn btn-success">Editar</a>
+                            
+                        @endif
+                            
+
                         </td>
                     </tr>
                     @endforeach
