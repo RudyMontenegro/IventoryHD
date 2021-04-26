@@ -47,9 +47,13 @@
                         </div>
                         @endif
 
-                        <div class="navbar-nav">
+                        <div class="navbar-nav me-4">
                             <a class="navbar-brand" href="{{ url('/showDisk') }}">DISCOS</a>
                         </div>
+                        <div class="navbar-nav me-4">
+                            <a class="navbar-brand" href="{{url('listaC')}}">TABLA</a>
+                        </div>
+
                         <div class="container-fluid">
                             <form action="{{ route('disco.compatible') }}" method="POST" class="d-flex">
                                 {{csrf_field()}}
@@ -57,25 +61,17 @@
                                     aria-label="Search" name="logico">
                                 <button class="btn btn-outline-light" type="submit">Búsqueda</button>
                             </form>
-
-
                         </div>
-
-                        
                         @if(Auth()->user()->bandera == 1)
-
-                          <a class="btn btn-outline-light me-2" href="{{ route('register') }} ">Nuevo/Usuario</a>
+                        <a class="btn btn-outline-light me-2" href="{{ route('register') }} ">Nuevo/Usuario</a>
                         <a class="btn btn-outline-light" href="{{ route('usuarios') }} ">Usuarios</a>
-                        <a href="{{url('listaC')}}"class="btn btn-outline-light mx-2">Compatibles</a>
                         @endif
-
-                        
                     </div>
                 </div>
             </div>
         </div>
         <ul class="nav navbar-nav navbar-right">
-                <div class="container-fluid">
+            <div class="container-fluid">
                 <a class="btn btn-outline-light " href="{{url('cerrar')}}">CERRAR SESION</a>
             </div>
     </nav>
